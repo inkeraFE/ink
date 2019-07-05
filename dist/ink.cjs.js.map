@@ -1,0 +1,1 @@
+{"version":3,"file":"ink.cjs.js","sources":["../packages/index.js"],"sourcesContent":["\nimport pkgInfo from '../package.json';\nconst version = pkgInfo.version;\n\nexport default {\n  version\n};\n"],"names":["version","pkgInfo"],"mappings":"unDAEMA,UAAUC,QAAQD,cAET,CACbA,QAAAA"}
