@@ -1,7 +1,7 @@
 import './style.css'
 
 export default {
-  name: 'InkBtn',
+  name: 'ink-btn',
   data() {
     return {
       active: false,

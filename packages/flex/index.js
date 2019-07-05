@@ -1,7 +1,7 @@
 import './style.css'
 
 export default {
-  name: 'Flex',
+  name: 'ink-flex',
   props: {
     flex: {
       type: Number
