@@ -1,77 +1,77 @@
 // Rollup plugins
-import babel from "rollup-plugin-babel";
-import resolve from "rollup-plugin-node-resolve";
-import replace from "rollup-plugin-replace";
-import json from "rollup-plugin-json";
-import commonjs from "rollup-plugin-commonjs";
-import { terser } from "rollup-plugin-terser";
+import babel from 'rollup-plugin-babel'
+import resolve from 'rollup-plugin-node-resolve'
+import replace from 'rollup-plugin-replace'
+import json from 'rollup-plugin-json'
+import commonjs from 'rollup-plugin-commonjs'
+import { terser } from 'rollup-plugin-terser'
 
 // add rollup-plugin-postcss
-import postcss from "rollup-plugin-postcss";
+import postcss from 'rollup-plugin-postcss'
 
 // add postcss plugins
-import simplevars from "postcss-simple-vars";
-import nested from "postcss-nested";
-import cssnext from "postcss-cssnext";
-import cssnano from "cssnano";
+import simplevars from 'postcss-simple-vars'
+import nested from 'postcss-nested'
+import cssnext from 'postcss-cssnext'
+import cssnano from 'cssnano'
 
 export default {
-  input: "./packages/index.js",
-  external: ["vue"],
+  input: './packages/index.js',
+  external: ['vue'],
   output: [
     {
-      file: "./dist/ink.cjs.js",
-      format: "cjs",
-      env: "production",
-      name: "inkUi",
-      exports: "named",
-      sourcemap: true,
+      file: './dist/ink.cjs.js',
+      format: 'cjs',
+      env: 'production',
+      name: 'inkUi',
+      exports: 'named',
+      sourcemap: true
     },
     {
-      file: "./dist/ink.umd.js",
-      format: "umd",
-      env: "production",
-      name: "inkUi", // mounted in windows
-      exports: "named",
+      file: './dist/ink.umd.js',
+      format: 'umd',
+      env: 'production',
+      name: 'inkUi', // mounted in windows
+      exports: 'named',
       sourcemap: true,
       globals: {
-        vue: "Vue",
-      },
+        vue: 'Vue'
+      }
     },
     {
-      file: "./dist/ink.es.js",
-      format: "es",
-      env: "production",
-      sourcemap: true,
-    },
+      file: './dist/ink.es.js',
+      format: 'es',
+      env: 'production',
+      sourcemap: true
+    }
   ],
   plugins: [
     postcss({
-      extensions: [".css"],
+      extensions: ['.css'],
       plugins: [
         simplevars(),
         nested(),
         cssnext({ warnForDuplicates: false }),
-        cssnano(),
-      ],
+        cssnano()
+      ]
     }),
     resolve({
-      mainFields: ["module", "main"],
+      mainFields: ['module', 'main']
     }),
     json(),
     babel({
-      exclude: "node_modules/**",
+      exclude: 'node_modules/**'
     }),
     commonjs({
-      include: "node_modules/**",
+      include: 'node_modules/**'
     }),
     replace({
-      ENV: JSON.stringify(process.env.NODE_ENV || "development"),
+      ENV: JSON.stringify(process.env.NODE_ENV || 'development')
     }),
-    process.env.NODE_ENV !== "production" && terser(),
+    process.env.NODE_ENV !== 'production' && terser()
   ],
   watch: {
-    include: "./packages/**",
-    exclude: "node_modules/**",
-  },
-};
+    include: './packages/**',
+    exclude: 'node_modules/**'
+  }
+}
