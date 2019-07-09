@@ -80,10 +80,6 @@ export default {
     alignStretch: {
       type: Boolean,
       default: false
-    },
-    className: {
-      type: String,
-      default: ''
     }
   },
   computed: {
@@ -117,13 +113,28 @@ export default {
         map[key] && classArr.push(key)
       })
       return classArr
+    },
+    getStyle() {
+      let s = {}
+      if (this.flex) {
+        s.flex = typeof this.flex === 'boolean' ? 1 : this.flex
+        s.WebkitFlex = typeof this.flex === 'boolean' ? 1 : this.flex
+      }
+      if (this.height) {
+        s.height = this.height
+      }
+      if (this.width) {
+        s.width = this.width
+      }
+      return s
     }
   },
   render(h) {
     return h(
       'div',
       {
-        class: ['flex', this.className, ...this.getClassArray]
+        class: ['flex', ...this.getClassArray],
+        style: this.getStyle
       },
       this.$slots.default
     )
