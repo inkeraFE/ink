@@ -1,9 +1,11 @@
 import pkgInfo from '../package.json'
 import Button from './button'
 import Flex from './flex'
+import Switch from './switch'
+import Radio from './radio'
 
 const version = pkgInfo.version
-const compList = [Button, Flex]
+const compList = [Button, Flex, Switch, Radio]
 
 const install = function(Vue) {
   // handle js plugin
