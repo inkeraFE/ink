@@ -4,9 +4,10 @@ import Flex from './flex'
 import Switch from './switch'
 import Radio from './radio'
 import Loading from './loading'
+import Progress from './progress'
 
 const version = pkgInfo.version
-const compList = [Button, Flex, Switch, Radio, Loading]
+const compList = [Button, Flex, Switch, Radio, Loading, Progress]
 
 const install = function(Vue) {
   // handle js plugin
@@ -22,7 +23,7 @@ if (window && window.Vue !== void 0) {
   install(window.Vue)
 }
 
-export { Button, Flex, Switch, Radio, Loading }
+export { Button, Flex, Switch, Radio, Loading, Progress }
 
 export default {
   version,
