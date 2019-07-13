@@ -3,12 +3,15 @@
   width: 20px;
   height: 20px;
   border-radius: 100%;
+
   * {
     pointer-events: none;
   }
+
   .radio-input {
     display: none;
   }
+
   .radio-label {
     position: relative;
     display: inline-block;
@@ -19,9 +22,11 @@
     box-sizing: border-box;
     background: white;
   }
+
   .radio-input[type='radio']:disabled + .radio-label {
     border: 1px solid #ccc;
   }
+
   .radio-input[type='radio']:disabled + .radio-label::before {
     content: ' ';
     position: absolute;
@@ -32,10 +37,12 @@
     height: 100%;
     background: #ccc;
   }
+
   .radio-input[type='radio']:checked + .radio-label {
     border: none;
     background: #108ee9;
   }
+
   .radio-input[type='radio']:checked + .radio-label::before {
     content: ' ';
     position: absolute;

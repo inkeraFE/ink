@@ -1,6 +1,6 @@
 {
   "name": "ink-ui",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A Vue.js 2.0 UI Toolkit for Mobile",
   "main": "dist/ink.cjs.js",
   "module": "dist/ink.es.js",
