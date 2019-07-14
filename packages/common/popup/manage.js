@@ -8,10 +8,12 @@ export default {
     document.body.removeAttribute('style')
   },
   createPopup: function(popupTarget) {
-    const popstate = () => {
+    const popstate = e => {
       this.removePopup()
       window.removeEventListener('popstate', popstate)
     }
+    window.addEventListener('popstate', popstate)
+    window.history.pushState({ type: '_popup' }, null)
 
     setHash()
     const popupDom = document.createElementNS(
@@ -20,15 +22,14 @@ export default {
     )
     popupDom.appendChild(popupTarget)
     document.body.appendChild(popupDom)
-    window.addEventListener('popstate', popstate)
-    window.history.pushState({ type: 'popup' }, null)
   },
   removePopup: function() {
     const popupDom = document.getElementsByTagNameNS(
       `ink-popup-wrapper${getHash()}`,
       'div'
     )[0]
-    popupDom && popupDom.parentNode.removeChild(popupDom)
+    if (!popupDom) return
+    popupDom.parentNode.removeChild(popupDom)
     window.history.go(-1)
   }
 }
