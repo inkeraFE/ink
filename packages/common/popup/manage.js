@@ -8,6 +8,11 @@ export default {
     document.body.removeAttribute('style')
   },
   createPopup: function(popupTarget) {
+    const popstate = () => {
+      this.removePopup()
+      window.removeEventListener('popstate', popstate)
+    }
+
     setHash()
     const popupDom = document.createElementNS(
       `ink-popup-wrapper${getHash()}`,
@@ -15,6 +20,8 @@ export default {
     )
     popupDom.appendChild(popupTarget)
     document.body.appendChild(popupDom)
+    window.addEventListener('popstate', popstate)
+    window.history.pushState({ type: 'popup' }, null)
   },
   removePopup: function() {
     const popupDom = document.getElementsByTagNameNS(
@@ -22,5 +29,6 @@ export default {
       'div'
     )[0]
     popupDom && popupDom.parentNode.removeChild(popupDom)
+    window.history.go(-1)
   }
 }
