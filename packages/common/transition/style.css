@@ -7,3 +7,13 @@
 .fade-leave-to {
   opacity: 0;
 }
+
+.slide-top-enter-active,
+.slide-top-leave-active {
+  transition: transform 100ms linear;
+}
+
+.slide-top-enter,
+.slide-top-leave-to {
+  transform: translate3d(0, 100%, 0);
+}

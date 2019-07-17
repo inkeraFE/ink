@@ -12,3 +12,5 @@ function transitionFactory(name) {
 }
 
 export const fadeTransition = transitionFactory('fade')
+
+export const slideTopTransition = transitionFactory('slide-top')
