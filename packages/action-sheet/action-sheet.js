@@ -5,7 +5,7 @@ import { isObject } from '../common/util'
 
 export default {
   name: 'ink-action-sheet',
-  mixin: [inkPopup],
+  mixins: [inkPopup],
   render: function(h) {
     return h(
       'div',

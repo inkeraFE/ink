@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import * as Base from './action-sheet'
+import Base from './action-sheet'
 import { isObject } from '../common/util'
 
 const ActionSheetClass = Vue.extend(Base)
@@ -27,7 +27,6 @@ ActionSheetClass.prototype.show = function() {
 }
 
 function ActionSheet(options) {
-  if (!isObject(options)) options = Object.create(null)
   const actionSheetInstance = new ActionSheetClass({
     el: document.createElement('div')
   })
@@ -35,7 +34,7 @@ function ActionSheet(options) {
   actionSheetInstance.show()
 }
 
-ActionSheet.render = options => {
+ActionSheet.render = function(options) {
   if (!isObject(options)) options = {}
   return ActionSheet(options)
 }
