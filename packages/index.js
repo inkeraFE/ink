@@ -8,6 +8,7 @@ import Progress from './progress'
 import Dialog from './dialog'
 import Popup from './popup'
 import ActionSheet from './action-sheet'
+import Toast from './toast'
 
 const version = pkgInfo.version
 const compList = [Button, Flex, Switch, Radio, Loading, Progress]
@@ -17,6 +18,7 @@ const install = function(Vue) {
   Vue.$dialog = Vue.prototype.$dialog = Dialog
   Vue.$popup = Vue.prototype.$popup = Popup
   Vue.$actionSheet = Vue.prototype.$actionSheet = ActionSheet
+  Vue.$toast = Vue.prototype.$toast = Toast
 
   // handle component
   compList.forEach(function(Component, idx) {
@@ -38,7 +40,8 @@ export {
   Progress,
   Dialog,
   Popup,
-  ActionSheet
+  ActionSheet,
+  Toast
 }
 
 export default {
