@@ -10,9 +10,11 @@ import Popup from './popup'
 import ActionSheet from './action-sheet'
 import Toast from './toast'
 import Picker from './picker'
+import Header from './header'
+import Page from './page'
 
 const version = pkgInfo.version
-const compList = [Button, Flex, Switch, Radio, Loading, Progress]
+const compList = [Button, Flex, Switch, Radio, Loading, Progress, Header, Page]
 
 const install = function(Vue) {
   // handle js plugin
@@ -44,7 +46,9 @@ export {
   Popup,
   ActionSheet,
   Toast,
-  Picker
+  Picker,
+  Header,
+  Page
 }
 
 export default {

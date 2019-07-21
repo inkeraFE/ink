@@ -1,0 +1,16 @@
+.ink-page {
+  width: 100vw;
+  height: 100vh;
+  background: #fafbfc;
+  overflow: hidden;
+
+  .page-content {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .page-tabbar {
+    height: 50px;
+  }
+}
