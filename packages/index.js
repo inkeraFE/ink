@@ -12,9 +12,22 @@ import Toast from './toast'
 import Picker from './picker'
 import Header from './header'
 import Page from './page'
+import Carousel from './carousel'
+import Tabs from './tabs'
 
 const version = pkgInfo.version
-const compList = [Button, Flex, Switch, Radio, Loading, Progress, Header, Page]
+const compList = [
+  Button,
+  Flex,
+  Switch,
+  Radio,
+  Loading,
+  Progress,
+  Header,
+  Page,
+  Carousel,
+  Tabs
+]
 
 const install = function(Vue) {
   // handle js plugin
@@ -48,7 +61,9 @@ export {
   Toast,
   Picker,
   Header,
-  Page
+  Page,
+  Carousel,
+  Tabs
 }
 
 export default {

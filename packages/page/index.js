@@ -1,18 +1,55 @@
 import './style.css'
+import inkFlex from '../flex'
 
 export default {
   name: 'ink-page',
+  components: {
+    inkFlex
+  },
   render(h) {
     return h(
-      'div',
+      'ink-flex',
       {
-        staticClass: 'ink-page'
+        staticClass: 'ink-page',
+        attrs: {
+          column: true
+        }
       },
       [
-        h('div', { staticClass: 'page-header' }, this.$slots.header),
-        h('div', { staticClass: 'page-content' }, this.$slots.content),
+        this.$slots.header &&
+          h(
+            'ink-flex',
+            {
+              staticClass: 'page-header',
+              attrs: {
+                column: true,
+                none: true
+              }
+            },
+            this.$slots.header
+          ),
+        h(
+          'ink-flex',
+          {
+            staticClass: 'page-content block',
+            attrs: {
+              flex: 1
+            }
+          },
+          this.$slots.content
+        ),
         this.$slots.bottom &&
-          h('div', { staticClass: 'page-tabbar' }, this.$slots.bottom)
+          h(
+            'ink-flex',
+            {
+              staticClass: 'page-tabbar',
+              attrs: {
+                column: true,
+                none: true
+              }
+            },
+            this.$slots.bottom
+          )
       ].filter(_ => _)
     )
   }
