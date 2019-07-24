@@ -14,6 +14,7 @@ import Header from './header'
 import Page from './page'
 import Carousel from './carousel'
 import Tabs from './tabs'
+import Drawer from './drawer'
 
 const version = pkgInfo.version
 const compList = [
@@ -26,7 +27,8 @@ const compList = [
   Header,
   Page,
   Carousel,
-  Tabs
+  Tabs,
+  Drawer
 ]
 
 const install = function(Vue) {
@@ -63,7 +65,8 @@ export {
   Header,
   Page,
   Carousel,
-  Tabs
+  Tabs,
+  Drawer
 }
 
 export default {
