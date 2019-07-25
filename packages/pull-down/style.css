@@ -1,7 +1,6 @@
 .ink-pull {
   overflow-y: auto;
   width: 100%;
-  height: 100%;
 
   .pull-wrapper {
     overflow: hidden;
@@ -9,7 +8,7 @@
     .pull-content {
       transition: transform 0;
     }
-  
+
     .pull-top-refresh {
       margin-top: -20px;
       height: 20px;
