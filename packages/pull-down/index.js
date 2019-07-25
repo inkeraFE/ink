@@ -30,11 +30,7 @@ export default {
   },
   methods: {
     onTouchStart(event) {
-      if (
-        this.lock &&
-        (this.$el.scrollTop + this.$el.clientHeight === this.$el.scrollHeight &&
-          this.moveY < 0)
-      ) {
+      if (this.lock && (this.$el.scrollTop === 0 && this.moveY >= 0)) {
         this.lock = false
       }
       this.startY = event.targetTouches[0].pageY
