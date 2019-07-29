@@ -16,6 +16,7 @@ import Carousel from './carousel'
 import Tabs from './tabs'
 import Drawer from './drawer'
 import PullDown from './pull-down'
+import Slide from './slide'
 
 const version = pkgInfo.version
 const compList = [
@@ -30,7 +31,8 @@ const compList = [
   Carousel,
   Tabs,
   Drawer,
-  PullDown
+  PullDown,
+  Slide
 ]
 
 const install = function(Vue) {
@@ -69,7 +71,8 @@ export {
   Carousel,
   Tabs,
   Drawer,
-  PullDown
+  PullDown,
+  Slide
 }
 
 export default {

@@ -38,8 +38,7 @@ export default {
     },
     onTouchMove(event) {
       const eventTarget = event.currentTarget
-      const scrollYStyle = document.defaultView.getComputedStyle(this.$el)
-        .overflowY
+      const scrollYStyle = window.getComputedStyle(this.$el).overflowY
       this.moveY = event.changedTouches[0].pageY - this.startY
       if (
         !this.lock &&
