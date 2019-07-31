@@ -40,6 +40,7 @@ export default {
         },
         on: {
           submit: e => {
+            e.preventDefault()
             this.$emit('submit', e)
           }
         }
