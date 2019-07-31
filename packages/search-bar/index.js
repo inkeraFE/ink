@@ -35,6 +35,9 @@ export default {
       'form',
       {
         staticClass: 'ink-search',
+        attrs: {
+          action: ''
+        },
         on: {
           submit: e => {
             this.$emit('submit', e)
