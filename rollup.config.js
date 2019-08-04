@@ -12,7 +12,7 @@ import postcss from 'rollup-plugin-postcss'
 // add postcss plugins
 import simplevars from 'postcss-simple-vars'
 import nested from 'postcss-nested'
-import cssnext from 'postcss-cssnext'
+import presetEnv from 'postcss-preset-env'
 import cssnano from 'cssnano'
 
 export default {
@@ -48,12 +48,7 @@ export default {
   plugins: [
     postcss({
       extensions: ['.css'],
-      plugins: [
-        simplevars(),
-        nested(),
-        cssnext({ warnForDuplicates: false }),
-        cssnano()
-      ]
+      plugins: [simplevars(), nested(), presetEnv(), cssnano()]
     }),
     resolve({
       mainFields: ['module', 'main']
